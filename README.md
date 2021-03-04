@@ -1,8 +1,9 @@
 # Combining Linking Techniques (ESWC2021 Demo Submission)
 /backend contains CLiT's backend logic
+
 /frontend contains CLiT's User interface
 
-Classical Pipeline {#sec:ClassicalPipeline}
+Classical Pipeline
 ------------------
 
 While [el]{acronym-label="el" acronym-form="singular+short"} systems
@@ -23,8 +24,6 @@ may be part of an evaluation data set or simple text - in both cases
 only text is given as information to the successive step.
 
 ### Mention Detection
-
-\
 \
 
   ------------- ------------------------------------------------------------------
@@ -32,7 +31,6 @@ only text is given as information to the successive step.
     **Output:** Collection of mentions and their locations within given document
   ------------- ------------------------------------------------------------------
 
-\
 \
 Also referred to as *spotting*, this task refers to the detection of
 so-called *mentions* within a given plain text. Depending on system,
@@ -45,16 +43,12 @@ mention is sometimes passed on to a system's consequent step. From the
 given text, mentions are extracted and passed on to the following step.
 
 ### Candidate Generation
-
-\
 \
 
   ------------- ---------------------------------------------------
      **Input:** Collection of mentions
     **Output:** Collection of candidate entities for each mention
   ------------- ---------------------------------------------------
-
-\
 \
 Receiving a list of mentions, the process of *candidate generation*
 finds lists of appropriate entities for each passed mention. Some
@@ -62,8 +56,6 @@ approaches additionally rank candidates at this step e.g. in terms of
 general importance based on statistical measures.
 
 ### Entity Disambiguation
-
-\
 \
 
   ------------- ---------------------------------------------------
@@ -72,7 +64,6 @@ general importance based on statistical measures.
                 by likelihood or at most one per mention
   ------------- ---------------------------------------------------
 
-\
 \
 Part of the pipeline potentially granting the most sophisticated
 techniques. Generally, this step is based on statistical measures,
@@ -105,8 +96,6 @@ the chosen workflow. In this paper, we define 4 types of processors:
 *splitter*s *combiner*s, *filter*s and *translator*s.
 
 ### Splitter
-
-\
 \
 
   ------------------- ---------------------------------------------------------------
@@ -114,8 +103,6 @@ the chosen workflow. In this paper, we define 4 types of processors:
     **Succeeded by:** 2 or more components
         **Commonly:** Directly passing same information to two (or more) components
   ------------------- ---------------------------------------------------------------
-
-\
 \
 Allowing for processing of items prior to passing them on to a
 subsequent step, a splitter is utilised in the case of a single stream
@@ -131,8 +118,6 @@ one KB to another allows for processing of entities resulting from a
 prior st
 
 ### Combiner
-
-\
 \
 
   ------------------- -----------------------------------------------------------
@@ -140,8 +125,6 @@ prior st
     **Succeeded by:** Any single component, *translator* or *filter*
         **Commonly:** *Union* operation, *intersection* operation
   ------------------- -----------------------------------------------------------
-
-\
 \
 In case multiple components were utilised in a prior step and are meant
 to be consolidated through a variety of possible combinations actions, a
@@ -153,8 +136,6 @@ information from multiple sources and adding it together - and
 prior to passing it on.
 
 ### Filter
-
-\
 \
 
   ------------------- -------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -162,8 +143,6 @@ prior to passing it on.
     **Succeeded by:** Any component or *translator*.
         **Commonly:** [ner]{acronym-label="ner" acronym-form="singular+short"}-, [pos]{acronym-label="pos" acronym-form="singular+short"}-specific or `rdf:type` filtering.
   ------------------- -------------------------------------------------------------------------------------------------------------------------------------------------------
-
-\
 \
 In order to allow removal of particular sets of items through
 user-defined rules or dynamic filtering, we introduce a subcomponent
@@ -172,8 +151,6 @@ truth values evaluated on passed partial results define which further
 outcomes may be detected by a subsequent component or translator.
 
 ### Translator
-
-\
 \
 
   ------------------- --------------------------------------------------------------------------------------
@@ -181,8 +158,6 @@ outcomes may be detected by a subsequent component or translator.
     **Succeeded by:** Any component or subcomponent.
         **Commonly:** `owl:sameAs` linking across [kg]{acronym-label="kg" acronym-form="singular+short"}s.
   ------------------- --------------------------------------------------------------------------------------
-
-\
 \
 Enabling seamless use of annotation tools regardless of underlying
 [kg]{acronym-label="kg" acronym-form="singular+short"}, we introduce the
