@@ -1,0 +1,34 @@
+body {
+  background: #f5f3e7;
+}
+
+.wrapper {
+  padding: 50px 100px;
+}
+
+.svg-container { 
+	display: inline-block;
+	position: relative;
+	width: 100%;
+	padding-bottom: 100%;
+	vertical-align: middle; 
+	overflow: hidden; 
+  background: #f5f3e7;
+}
+
+.svg-content { 
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+// line {
+//   //position: relative;
+//   z-index: -1;
+// }
+
+// rect {
+//   //position: relative;
+//   z-index: 1;
+// }

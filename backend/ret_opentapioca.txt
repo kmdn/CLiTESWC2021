@@ -1,0 +1,25 @@
+@prefix itsrdf: <http://www.w3.org/2005/11/its/rdf#> .
+@prefix nif: <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://kit.edu/agnos/documentInput#offset_0_10> a nif:OffsetBasedString,
+        nif:Phrase ;
+    nif:anchorOf "Steve Jobs" ;
+    nif:beginIndex "0"^^xsd:nonNegativeInteger ;
+    nif:endIndex "10"^^xsd:nonNegativeInteger ;
+    nif:referenceContext <http://kit.edu/agnos/documentInput#char=0,42> ;
+    itsrdf:taIdentRef <http://www.wikidata.org/entity/Q19837> .
+
+<http://kit.edu/agnos/documentInput#offset_15_24> a nif:OffsetBasedString,
+        nif:Phrase ;
+    nif:anchorOf "Joan Baez" ;
+    nif:beginIndex "15"^^xsd:nonNegativeInteger ;
+    nif:endIndex "24"^^xsd:nonNegativeInteger ;
+    nif:referenceContext <http://kit.edu/agnos/documentInput#char=0,42> ;
+    itsrdf:taIdentRef <http://www.wikidata.org/entity/Q131725> .
+
+<http://kit.edu/agnos/documentInput#char=0,42> a nif:Context,
+        nif:OffsetBasedString ;
+    nif:beginIndex "0"^^xsd:nonNegativeInteger ;
+    nif:endIndex "42"^^xsd:nonNegativeInteger ;
+    nif:isString "Steve Jobs and Joan Baez are famous people" .

@@ -1,0 +1,34 @@
+{
+	"text": "I like turtles!",
+	"md": [{"MD1":"Babelfy"},{"MD2": "DBpedia"},"MD3":{"Babelfy"}],
+	"cg": ["CG1": "Babelfy", "CG2": "DBpedia"],
+	"ed": ["ED1": "Babelfy"],
+	"combiners":
+				[
+					"CO1": "Union", 
+					"CO2": "Intersection"
+				],
+	"splitters": 
+				[
+					"SP1": "Copy"
+				],
+	"translators": 
+				[
+					"TR1": "WD_TO_DBP"
+				],
+	"filters": 	
+				[
+					"FI1": "TYPE_PERSON"
+				],
+	"interactions": [
+					"CO1": ["MD1", "MD2"],
+					"CO2": ["ED1", "ED2"],
+				]
+	"connections": 
+				{
+					{"MD1":"CO1"},
+					{"MD2":"CO1"},
+					{"CO1":"CG1"},
+					{"CG1":"ED1"}
+				}
+}

@@ -1,0 +1,110 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 02.12.2020, 13:31:08
+    Author     : wf7467
+*/
+
+@charset "UTF-8";
+html, body {
+  font-family: "Roboto", "Helvetica", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+.template-wrap {
+  width: 50%;
+  height: 100%;
+  border: 1px solid #767676;
+  margin: 0 auto;
+  padding: 0.5em;
+}
+.template-wrap figure {
+  margin: 1em auto;
+}
+
+.ep-flowchart {
+  width: 100%;
+  position: relative;
+}
+
+/* Move elements up a bit on hovering over them */
+.ep-svg-wrap .ep-svg-block {
+  cursor: pointer;
+}
+
+
+.ep-svg-wrap .ep-svg-block rect, .ep-svg-wrap .ep-svg-block text {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+/* Move elements up a bit on hovering over them */
+.ep-svg-wrap .ep-svg-block:hover rect, .ep-svg-wrap .ep-svg-block:hover text {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  text-shadow: 0 1px 0 #fff, 0 -1px 0 #000;
+}
+
+.ep-detail-wrap {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.ep-detail-wrap .ep-detail {
+  position: relative;
+  font-size: 1.2me;
+  background-color: #F5F5F0;
+  color: #586075;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  margin: 50% auto;
+  width: 60%;
+  height: auto;
+  padding: 1em 2em;
+  border-radius: 15px;
+  border: 5px solid #8BE5AD;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+}
+.ep-detail-wrap .ep-detail::after {
+  content: "✖";
+  color: #8BE5AD;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  display: inline-block;
+  font-size: 15px;
+  line-height: 20px;
+  height: 20px;
+  width: 20px;
+  padding: 5px;
+  text-align: center;
+  background-color: #F5F5F0;
+  border-radius: 50%;
+  border: 5px solid;
+  cursor: pointer;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+.pop-details-enter-active, .pop-details-leave-active {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.pop-details-enter {
+  opacity: 0;
+}
+
+.pop-details-leave-to {
+  opacity: 0;
+}

@@ -1,0 +1,13 @@
+.btn-group {
+	width: 100%;
+}
+
+.btn-group > .btn {
+	float: none;
+	width: 100%;
+	text-align: left;
+}
+
+.card {
+	margin-bottom: 15px;
+}

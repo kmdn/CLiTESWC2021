@@ -1,0 +1,47 @@
+.btn-group {
+	width: 100%;
+}
+
+.btn-group  >.btn {
+	float: none;
+	width: 100%;
+	text-align: left;
+}
+
+.card {
+	margin-bottom: 15px;
+}
+
+[data-bracket] {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	margin-bottom: 2px
+}
+
+[data-bracket]:after {
+	content: "";
+	display: block;
+	height: 6px;
+	border: 2px solid black;
+	border-top: none;
+}
+
+[data-bracket]:before {
+	content: attr(data-bracket);
+	position: absolute;
+	top: 100%;
+	font-size: 80%;
+	padding: 5px;
+	white-space: nowrap;
+	left: 50%;
+	transform: translateX(-50%)
+}
+
+/*Cytoscape*/
+#cy {
+	height: 300px;
+	position: relative;
+	top: 0px;
+	left: 0px;
+}

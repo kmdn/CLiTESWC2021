@@ -1,0 +1,134 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<script src="js/jquery-3.5.1.min.js"></script>
+<!-- Bootstrap not yet compatible with Popper v2 -->
+<!-- <script type="text/javascript" src="https://unpkg.com/@popperjs/core@2"></script> -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="js/bootstrap-multiselect.js"></script>
+<link rel="stylesheet" href="css/bootstrap-multiselect.css">
+
+<script src="js/script.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="container">
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container-fluid">
+		</div>
+	</nav>
+
+	<h1>Agnos Experiment Configuration</h1>
+
+	<form>
+		<fieldset>
+
+			<legend>New Experiment</legend>
+			<div class="form-group row">
+				<label class="col-md-4 control-label" for="type">Experiment Type</label>
+				<div class="col-md-4">
+					<select id="type" multiple="multiple">
+						<option value="A2KB">A2KB</option>
+						<option value="C2KB">C2KB</option>
+						<option value="D2KB">D2KB</option>
+						<option value="ERec">Entity Recognition</option>
+						<option value="ETyping">Entity Typing</option>
+						<option value="OKE_Task1">OKE Challenge 2015 - Task 1</option>
+						<option value="OKE_Task2">OKE Challenge 2015 - Task 2</option>
+						<option value="RT2KB">RT2KB</option>
+						<option value="RE">RE</option>
+						<option value="OKE2018Task4">OKE2018Task4</option>
+					</select>
+				</div>
+			</div>
+			
+			<div class="form-group row">
+				<label class="col-md-4 control-label" for="matching">Matching</label>
+				<div class="col-md-4">
+					<select id="matching">
+						<option value="WEAK_ANNOTATION_MATCH" selected="selected">Weak annotation match</option>
+						<option value="STRONG_ANNOTATION_MATCH">Strong annotation match</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<hr>
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label class="col-md-4 control-label" for="annotator">Annotator</label>
+			</div>
+			<div class="form-group">
+				<div id="annotators"></div>
+				<button id="addStandardAnnotator" class="btn btn-primary" type="button">Add Standard Annotator</button>
+				<button id="addCustomAnnotator" class="btn btn-primary" type="button">Add Custom Annotator</button>
+			</div>
+
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<hr>
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label class="col-md-4 control-label" for="datasets">Dataset</label>
+				<div class="col-md-4">
+					<select id="dataset" multiple="multiple">
+						<option value="ACE2004">ACE2004</option>
+						<option value="AIDA/CoNLL-Complete">AIDA/CoNLL-Complete</option>
+						<option value="AIDA/CoNLL-Test A">AIDA/CoNLL-Test A</option>
+						<option value="AIDA/CoNLL-Test B">AIDA/CoNLL-Test B</option>
+						<option value="AIDA/CoNLL-Training">AIDA/CoNLL-Training</option>
+						<option value="AQUAINT">AQUAINT</option>
+						<option value="DBpediaSpotlight">DBpediaSpotlight</option>
+						<option value="Derczynski IPM NEL">Derczynski IPM NEL</option>
+						<option value="N3-RSS-500">N3-RSS-500</option>
+						<option value="N3-Reuters-128">N3-Reuters-128</option>
+						<option value="OKE 2018 Task 1 training dataset">OKE 2018 Task 1 training dataset</option>
+						<option value="OKE 2018 Task 2 training dataset">OKE 2018 Task 2 training dataset</option>
+						<option value="OKE 2018 Task 4 training dataset">OKE 2018 Task 4 training dataset</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<hr>
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label class="col-md-4 control-label" for="knowledge-base">Knowledge Base</label>
+				<div class="col-md-4">
+					<select id="knowledge-base" multiple="multiple">
+						<option value="Wikipedia">Wikipedia</option>
+						<option value="Wikidata">Wikidata</option>
+						<option value="DBpedia">DBpedia</option>
+						<option value="YAGO">YAGO</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<hr>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="submit"></label>
+				<div id="submitField" class="col-md-4">
+					<input type="button" id="submit" name="singlebutton" class="btn btn-primary" value="Run Experiment">
+				</div>
+			</div>
+		</fieldset>
+	</form>
+
+</body>
+</html>
+
