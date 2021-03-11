@@ -160,3 +160,40 @@ characteristics and necessity when working with heterogeneous systems.
 
 Protocol Development
 --------------------
+
+For the formal definition of a pipeline we use JSON.
+A pipeline configuration consists of an \textit{ID}, the \textit{pipeline type}\footnote{Further information about the pipeline type is provided it the GitHub repository.}, a list of \textit{components} for each component type, and a list of \textit{connections} between the components.
+Each component list consists of key-value-pairs, where the key is the ID of the component, and the value defines either the \gls{el} system used for this component, or in case of the \textit{processors} it defines their type.
+Slightly differently, for the connection list the key represents the source and the value the target component of the connection.
+An example that corresponds to the pipeline in the first figure below looks like this:
+
+```
+pipelineConfig = {
+	"id": 123,
+	"pipelineType": "complex",
+	"md": [
+		{"MD1": "Babelfy"} ],
+	"cg": [
+		{"CG1": "DBpediaSp"} ],
+	"ed": [
+		{"ED1": "AIDA"} ],
+	"combiners": [],
+	"splitters": [],
+	"translators": [
+		{"TR1": "WD2DBP"} ],
+	"filters": [],
+	"connections": [
+		{"MD1": "CG1"},
+		{"CG1": "ED1"},
+		{"ED1": "TR1"} ]
+}
+```
+
+Example of a simple EL pipeline with a processor component, translating from Wikidata to DBpedia entities:
+
+![Simple pipeline graph](https://github.com/kmdn/CLiTESWC2021/blob/main/img/pipeline_graph_simple.png)
+
+Example of an advanced EL pipeline with a splitter and a combiner, merging the results of the mention detection of three different EL systems.
+
+![Advanced pipeline graph](https://github.com/kmdn/CLiTESWC2021/blob/main/img/pipeline_graph_advanced.png)
+
