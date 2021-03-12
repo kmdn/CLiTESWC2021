@@ -3,17 +3,20 @@
 
 /frontend contains CLiT's User interface
 
+![CLiT Website](https://github.com/kmdn/CLiTESWC2021/blob/main/img/clit_website_part_core.png)
+
 Classical Pipeline
 ------------------
 
-While [el]{acronym-label="el" acronym-form="singular+short"} systems
+While Entity Linking (EL) systems
 vary in terms of approaches and potential steps within respective
 pipelines, we identify the most commonly-employed ones as the *classical
 pipeline*. We use said pipeline as a template for our framework in order
-to reach compatibility with as many existing systems as possible. In
-Figure [\[fig:classicalpipeline\]](#fig:classicalpipeline){reference-type="ref"
-reference="fig:classicalpipeline"}, we present our understanding of the
+to reach compatibility with as many existing systems as possible. In the
+figure below, we present our understanding of the
 functioning of a classical pipeline for a single system.
+
+![Classic pipeline](https://github.com/kmdn/CLiTESWC2021/blob/main/img/classic_pipeline.png)
 
 ### Input Document
 
@@ -32,9 +35,7 @@ only text is given as information to the successive step.
 
 Also referred to as *spotting*, this task refers to the detection of
 so-called *mentions* within a given plain text. Depending on system,
-different kinds of mentions may be detected. [pos]{acronym-label="pos"
-acronym-form="singular+short"} tagging, [ner]{acronym-label="ner"
-acronym-form="singular+short"}-based techniques and string-matching to
+different kinds of mentions may be detected. POS tagging, NER-based techniques and string-matching to
 labels of specific types of entities from considered knowledge bases are
 among potential techniques. Further information pertaining to the
 mention is sometimes passed on to a system's consequent step. From the
@@ -70,20 +71,18 @@ and suggested candidates.
 Finally, results from the given pipeline are returned. These tend to be
 in the form of annotations based on the initial input document or as
 hyperlinks referring to specific knowledge bases, such as
-Wikipedia [@wikipedia], DBpedia [@dbpedia] or Wikidata [@wikidata].
+Wikipedia, DBpedia or Wikidata.
 Occasionally, some systems add an additional step for *pruning*
 
 Pipeline Customization {#sec:pipelinecustomization}
 ----------------------
 
 In order to allow for customized experiences and settings, we introduce
-- additionally to the singular steps described in
-Section [5.1](#sec:ClassicalPipeline){reference-type="ref"
-reference="sec:ClassicalPipeline"} - further processing possibilities
+further processing possibilities
 with the intent of allowing for nigh-infinite combinations of system
 components. The following **subcomponents** place themselves
 ideologically *in between* components presented within the classical
-model of an [el]{acronym-label="el" acronym-form="singular+short"}
+model of an EL
 pipeline. We refer to them as *processors* or *subcomponents*, handling
 post-processing of structures output from prior tasks, preparing them
 for being potentially, in turn, further processed by subsequent steps in
@@ -107,14 +106,14 @@ step for a following one. A potential post-processing step may be to
 filter information from a prior step, such as eliminating superfluous
 candidate entities or unwanted mentions.
 
-As for pre-processing, a splitter may preprocessing --\> translate from
+As for pre-processing, a splitter may preprocessing --> translate from
 one KB to another allows for processing of entities resulting from a
 prior st
 
 ### Combiner
 
   ------------------- -----------------------------------------------------------
-     **Preceded by:** Any multiply-connected ($\ge$2) component or subcomponent
+     **Preceded by:** Any multiply-connected > 2 component or subcomponent
     **Succeeded by:** Any single component, *translator* or *filter*
         **Commonly:** *Union* operation, *intersection* operation
   ------------------- -----------------------------------------------------------
@@ -133,7 +132,7 @@ prior to passing it on.
   ------------------- -------------------------------------------------------------------------------------------------------------------------------------------------------
      **Preceded by:** Any component or subcomponent.
     **Succeeded by:** Any component or *translator*.
-        **Commonly:** [ner]{acronym-label="ner" acronym-form="singular+short"}-, [pos]{acronym-label="pos" acronym-form="singular+short"}-specific or `rdf:type` filtering.
+        **Commonly:** NER-, POS-specific or `rdf:type` filtering.
   ------------------- -------------------------------------------------------------------------------------------------------------------------------------------------------
 
 In order to allow removal of particular sets of items through
@@ -147,25 +146,37 @@ outcomes may be detected by a subsequent component or translator.
   ------------------- --------------------------------------------------------------------------------------
      **Preceded by:** Any component or subcomponent.
     **Succeeded by:** Any component or subcomponent.
-        **Commonly:** `owl:sameAs` linking across [kg]{acronym-label="kg" acronym-form="singular+short"}s.
+        **Commonly:** `owl:sameAs` linking across KGs.
   ------------------- --------------------------------------------------------------------------------------
 
-Enabling seamless use of annotation tools regardless of underlying
-[kg]{acronym-label="kg" acronym-form="singular+short"}, we introduce the
+Enabling seamless use of annotation tools regardless of underlying KG, we introduce the
 translator subcomponent. It is meant as a processing unit capable of
 translating entities and potentially other features used by one tool to
 another, allowing further inter-system compatibility. It may be employed
 at any level and succeeded by any (sub)component due to its ubiquitous
 characteristics and necessity when working with heterogeneous systems.
 
+
+Pipeline Examples
+-----------------
+
+Example of a simple EL pipeline with a processor component, translating from Wikidata to DBpedia entities:
+
+![Simple pipeline graph](https://github.com/kmdn/CLiTESWC2021/blob/main/img/pipeline_graph_simple.png)
+
+Example of an advanced EL pipeline with a splitter and a combiner, merging the results of the mention detection of three different EL systems:
+
+![Advanced pipeline graph](https://github.com/kmdn/CLiTESWC2021/blob/main/img/pipeline_graph_advanced.png)
+
+
 Protocol Development
 --------------------
 
 For the formal definition of a pipeline we use JSON.
-A pipeline configuration consists of an \textit{ID}, the \textit{pipeline type}\footnote{Further information about the pipeline type is provided it the GitHub repository.}, a list of \textit{components} for each component type, and a list of \textit{connections} between the components.
-Each component list consists of key-value-pairs, where the key is the ID of the component, and the value defines either the \gls{el} system used for this component, or in case of the \textit{processors} it defines their type.
+A pipeline configuration consists of an *ID*, the *pipeline type*, a list of *components* for each component type, and a list of *connections* between the components.
+Each component list consists of key-value-pairs, where the key is the ID of the component, and the value defines either the EL system used for this component, or in case of the *processors*, it defines their type.
 Slightly differently, for the connection list the key represents the source and the value the target component of the connection.
-An example that corresponds to the pipeline in the first figure below looks like this:
+An example of a JSON configuration for a simple pipeline (that corresponds to the simple pipeline in the former of the figures above) looks like this:
 
 ```
 pipelineConfig = {
@@ -188,12 +199,4 @@ pipelineConfig = {
 		{"ED1": "TR1"} ]
 }
 ```
-
-Example of a simple EL pipeline with a processor component, translating from Wikidata to DBpedia entities:
-
-![Simple pipeline graph](https://github.com/kmdn/CLiTESWC2021/blob/main/img/pipeline_graph_simple.png)
-
-Example of an advanced EL pipeline with a splitter and a combiner, merging the results of the mention detection of three different EL systems.
-
-![Advanced pipeline graph](https://github.com/kmdn/CLiTESWC2021/blob/main/img/pipeline_graph_advanced.png)
 
