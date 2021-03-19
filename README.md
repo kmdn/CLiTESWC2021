@@ -5,6 +5,10 @@
 
 ![CLiT Website](https://github.com/kmdn/CLiTESWC2021/blob/main/img/clit_website_part_core.png)
 
+Demo Video(s)
+-------------
+/videos/ESWC2021_Demo_Complex_Pipeline.mov - Video displaying how to add a 'Complex Pipeline'
+
 Classical Pipeline
 ------------------
 
