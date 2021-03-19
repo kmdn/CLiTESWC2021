@@ -73,7 +73,7 @@ hyperlinks referring to specific knowledge bases, such as
 Wikipedia [@wikipedia], DBpedia [@dbpedia] or Wikidata [@wikidata].
 Occasionally, some systems add an additional step for *pruning*
 
-Pipeline Customization {#sec:pipelinecustomization}
+Pipeline Customization
 ----------------------
 
 In order to allow for customized experiences and settings, we introduce
