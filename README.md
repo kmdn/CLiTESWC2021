@@ -3,17 +3,17 @@
 
 /frontend contains CLiT's User interface
 
-[CLiT Website](http://clit.tech):
+[CLiT Website](http://clit.tech)
 [![CLiT Website](https://github.com/kmdn/CLiTESWC2021/blob/main/img/clit_website_part_core.png)](http://clit.tech)
 
 Demo Video(s)
 -------------
-![Setup and Intro to Simple & Standard Linkers](/videos/ESWC2021_Demo_Simple_Standard_Linkers.mov):
+![Setup and Intro to Simple & Standard Linkers](/videos/ESWC2021_Demo_Simple_Standard_Linkers.mov)
 
 [![ESWC2021 Demo Complex Pipeline](/img/video_simple.PNG)](https://www.youtube.com/watch?v=FQMnaR5hE0k)
 
 
-How to create a ![Complex Pipeline](/videos/ESWC2021_Demo_Complex_Pipeline.mov):
+How to create a ![Complex Pipeline](/videos/ESWC2021_Demo_Complex_Pipeline.mov)
 [![ESWC2021 Demo Complex Pipeline](/img/video_complex.PNG)](https://www.youtube.com/watch?v=3gLGFAUDkVo)
 
 Classical Pipeline
