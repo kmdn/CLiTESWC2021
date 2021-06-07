@@ -7,11 +7,11 @@
 
 Demo Video(s)
 -------------
-![Setup and Intro to Simple & Standard Linkers](/videos/ESWC2021_Demo_Simple_Standard_Linkers.mov)
+![Setup and Intro to Simple & Standard Linkers](/videos/ESWC2021_Demo_Simple_Standard_Linkers.mov):
+[![ESWC2021 Demo Complex Pipeline](https://img.youtube.com/vi/3gLGFAUDkVo/0.jpg)](https://www.youtube.com/watch?v=FQMnaR5hE0k)
 
-[//]: # ([![ESWC2021 Demo Complex Pipeline](https://img.youtube.com/vi/3gLGFAUDkVo/0.jpg)](https://www.youtube.com/watch?v=3gLGFAUDkVo))
-
-How to create a ![Complex Pipeline](/videos/ESWC2021_Demo_Complex_Pipeline.mov)
+How to create a ![Complex Pipeline](/videos/ESWC2021_Demo_Complex_Pipeline.mov):
+[![ESWC2021 Demo Complex Pipeline](/img/video_complex.PNG)](https://www.youtube.com/watch?v=3gLGFAUDkVo)
 
 Classical Pipeline
 ------------------
