@@ -3,7 +3,7 @@
 
 /frontend contains CLiT's User interface
 
-![CLiT Website](https://github.com/kmdn/CLiTESWC2021/blob/main/img/clit_website_part_core.png)
+![CLiT Website](https://github.com/kmdn/CLiTESWC2021/blob/main/img/clit_website_part_core.png)(http://clit.tech)
 
 Demo Video(s)
 -------------
