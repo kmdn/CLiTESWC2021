@@ -27,7 +27,7 @@ to reach compatibility with as many existing systems as possible. In the
 figure below, we present our understanding of the
 functioning of a classical pipeline for a single system.
 
-![Classic pipeline](https://github.com/kmdn/CLiTESWC2021/blob/main/img/classic_pipeline.png)
+![Classic pipeline](/img/classic_pipeline.png)
 
 ### Input Document
 
@@ -173,11 +173,11 @@ Pipeline Examples
 
 Example of a simple EL pipeline with a processor component, translating from Wikidata to DBpedia entities:
 
-![Simple pipeline graph](https://github.com/kmdn/CLiTESWC2021/blob/main/img/pipeline_graph_simple.png)
+![Simple pipeline graph](/img/pipeline_graph_simple.png)
 
 Example of an advanced EL pipeline with a splitter and a combiner, merging the results of the mention detection of three different EL systems:
 
-![Advanced pipeline graph](https://github.com/kmdn/CLiTESWC2021/blob/main/img/pipeline_graph_advanced.png)
+![Advanced pipeline graph](/img/pipeline_graph_advanced.png)
 
 
 Protocol Development
