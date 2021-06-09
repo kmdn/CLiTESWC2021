@@ -2,10 +2,10 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>Agnos_mini</groupId>
-	<artifactId>Agnos_mini</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<description>Mini version of Agnos</description>
+	<groupId>kit.edu</groupId>
+	<artifactId>agnos_collab</artifactId>
+	<version>0.0.1</version>
+	<description>Mini version of Agnos for Collaborative purposes</description>
 
 	<properties>
 		<!-- GERBIL properties - START -->
@@ -32,12 +32,7 @@
 		<repository>
 			<id>maven-restlet</id>
 			<name>Public online Restlet repository</name>
-			<url>http://maven.restlet.org</url>
-		</repository>
-		<repository>
-			<id>Apache Repo Central</id>
-			<name>Apache Repository</name>
-			<url>http://repo.maven.apache.org/maven2</url>
+			<url>https://maven.restlet.org</url>
 		</repository>
 		<repository>
 			<id>maven.aksw.internal</id>
@@ -52,13 +47,16 @@
 	</repositories>
 
 	<build>
+		<!-- Remove to fix package org.junit does not exist error (https://stackoverflow.com/a/22237180) -->
 		<sourceDirectory>src</sourceDirectory>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.0</version>
 				<configuration>
-					<release>1.8</release>
+					<!-- <maven.compiler.release>8</maven.compiler.release> See: https://stackoverflow.com/questions/52419312/release-version-1-8-not-supported -->
+					<!-- release changed to 8 from 1.8 - 'release' only has major versions -->
+					<!-- <release>8</release>  -->
 					<source>1.8</source>
 					<target>1.8</target>
 				</configuration>
@@ -67,6 +65,12 @@
 	</build>
 
 	<dependencies>
+		<!-- GERBIL dependency for GERBILException etc -->
+		<dependency>
+			<groupId>org.aksw</groupId>
+			<artifactId>gerbil</artifactId>
+			<version>1.2.5</version>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.json/json -->
 		<dependency>
 			<groupId>org.json</groupId>
@@ -204,7 +208,7 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.8.2</version>
-			<scope>test</scope>
+			<!-- <scope>test</scope>  -->
 		</dependency>
 
 		<!-- Independent project on gephi graph to latex -->
@@ -429,7 +433,11 @@
 			<artifactId>weka-stable</artifactId>
 			<version>3.8.4</version>
 		</dependency>
-
-
+		<!-- TextRazor analysis and linking system -->
+		<dependency>
+			<groupId>com.textrazor</groupId>
+			<artifactId>textrazor</artifactId>
+			<version>1.0.9</version>
+		</dependency>
 	</dependencies>
 </project>

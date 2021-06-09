@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>agnos-web</groupId>
 	<artifactId>agnos-web</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<packaging>war</packaging>
 
 	<properties>
@@ -49,25 +49,49 @@
 			<artifactId>json</artifactId>
 			<version>20140107</version>
 		</dependency>
+		<!-- <dependency> <groupId>org.aksw</groupId> <artifactId>gerbil</artifactId> 
+			<version>1.2.8-SNAPSHOT</version> </dependency> -->
 		<dependency>
-			<groupId>org.aksw</groupId>
-			<artifactId>gerbil</artifactId>
-			<version>1.2.8-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>Agnos_mini</groupId>
-			<artifactId>Agnos_mini</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<groupId>kit.edu</groupId>
+			<artifactId>agnos_collab</artifactId>
+			<version>0.0.1</version>
+			<!-- <scope>system</scope> <systemPath>${basedir}/repo/kit/edu/agnos-collab/0.0.1/agnos-collab-0.0.1.jar</systemPath> -->
 		</dependency>
 	</dependencies>
 
 	<build>
 		<plugins>
+			<!-- HEROKU Webapp Runner -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>copy</goal>
+						</goals>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+									<groupId>com.heroku</groupId>
+									<artifactId>webapp-runner</artifactId>
+									<version>8.5.57.0</version>
+									<destFileName>webapp-runner.jar</destFileName>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.1</version>
 				<configuration>
-					<release>10</release>
+					<!-- <release>8</release> -->
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 			<plugin>
